@@ -31,9 +31,8 @@ test_ds = create_dataset(test)
 
 model = tf.keras.models.Sequential([
   tf.keras.layers.DenseFeatures(feature_columns=feature_columns),
-  tf.keras.layers.Dense(units=128, activation='relu'),
-  tf.keras.layers.Dropout(rate=0.2),
-  tf.keras.layers.Dense(units=128, activation='relu'),
+  tf.keras.layers.Dense(units=1024, activation='sigmoid'),
+  tf.keras.layers.Dense(units=1024, activation='sigmoid'),
   tf.keras.layers.Dense(units=1, activation='sigmoid')
 ])
 
