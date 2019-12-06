@@ -43,6 +43,9 @@ model.compile(optimizer='adam',
 
 model.fit(train_ds, epochs=100, use_multiprocessing= True, verbose =2 )
 
+print("--Save model--")
+model.save("coronaryHeartDisease.h5")
+
 print("--Evaluate model--")
 model_loss, model_acc = model.evaluate(test_ds,verbose = 2 )
 print(f"Model Loss:    {model_loss:.2f}")
