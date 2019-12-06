@@ -12,7 +12,7 @@ def main():
      pick = input(f"Pick test_image (0 -> {len(x_test)-1}):")
      while pick.isdigit() and int(pick) >= 0 and int(pick) < len(x_test):
         pick = int(pick)
-        img = x_test[pick]
+        img = x_test[pick]/255 #Fix by dividing the values by 255
         guess = y_test[pick]
         print(f"--Should be Class {guess}--")
         predict(model, class_names, img, guess)
